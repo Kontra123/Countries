@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="isLoading" type="boolean" />
+        <variable name="border" type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/loading_country_border"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="@string/loading_country_border"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="18sp"
+            app:visibleGone="@{isLoading}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:visibleGone="@{!isLoading}">
+
+            <TextView
+                android:id="@+id/country_border_title_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:padding="20dp"
+                android:text="@string/border_title"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/country_border_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@{border}"
+                android:textSize="20sp"
+                android:padding="10dp"
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</layout>

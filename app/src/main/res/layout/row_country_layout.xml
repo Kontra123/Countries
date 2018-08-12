@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="country" type="String" />
+        <variable name="callback" type="assignment.countries.view.callback.CountryClickCallback" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> callback.onClick(country)}"
+        android:orientation="vertical"
+        android:background="@android:color/white"
+        >
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{country}"
+            android:textSize="20sp"
+            android:padding="10dp"
+            >
+
+        </TextView>
+
+    </LinearLayout>
+
+
+</layout>
